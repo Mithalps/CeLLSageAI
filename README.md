@@ -493,17 +493,6 @@ CellSage AI isn't a proof-of-concept chatbot wrapped in a battery-manufacturing 
 
 ---
 
-## Team Contributions
-
-| Name | Role | Contributions |
-|---|---|---|
-| *[Team Member 1]* | *[Role]* | *[Contributions]* |
-| *[Team Member 2]* | *[Role]* | *[Contributions]* |
-| *[Team Member 3]* | *[Role]* | *[Contributions]* |
-| *[Team Member 4]* | *[Role]* | *[Contributions]* |
-
----
-
 ## Conclusion
 
 EV battery manufacturing sits at the intersection of precision engineering and massive scale — and the cost of a slow, fragmented investigation process compounds with every cell produced. **CellSage AI** reimagines root cause analysis not as a manual data-archaeology exercise, but as an autonomous, evidence-grounded reasoning process — one that gives engineers back their most valuable resource: time.
