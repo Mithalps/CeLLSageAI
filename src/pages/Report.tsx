@@ -3,7 +3,7 @@ import { Link, useSearch } from "wouter";
 import AppShell from "@/components/AppShell";
 import ConfidenceBar from "@/components/ConfidenceBar";
 import StatusBadge from "@/components/StatusBadge";
-import { generateReport } from "@/services/api";
+import { generateReport, getHistory } from "@/services/api";
 import { Download, ArrowLeft, Sparkles, Loader2 } from "lucide-react";
 
 interface ReportData {
@@ -67,10 +67,10 @@ export default function Report() {
 
   // On mount: auto-load latest investigation from history if available
   useEffect(() => {
-    fetch("http://localhost:8000/history")
-      .then((r) => r.json())
+    getHistory()
       .then((data) => {
         const latest = data?.investigations?.[0];
+  
         if (latest?.query) {
           setInputQuery(latest.query);
         }
