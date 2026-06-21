@@ -2,11 +2,13 @@
 
 ### Agentic Copilot for EV Battery Manufacturing Root Cause Analysis
 
-[![Status](https://img.shields.io/badge/status-hackathon--submission-blue)]()
-[![Frontend](https://img.shields.io/badge/frontend-React%20%2B%20TypeScript-61DAFB)]()
-[![Backend](https://img.shields.io/badge/backend-FastAPI-009688)]()
-[![AI](https://img.shields.io/badge/AI-LangGraph%20%2B%20Groq-orange)]()
-[![License](https://img.shields.io/badge/license-MIT-lightgrey)]()
+[![Status](https://img.shields.io/badge/status-hackathon--submission-blue?style=flat-square)]()
+[![Frontend](https://img.shields.io/badge/frontend-React%20%2B%20TypeScript-3B82F6?style=flat-square&logo=react&logoColor=white)]()
+[![Backend](https://img.shields.io/badge/backend-FastAPI-22C55E?style=flat-square&logo=fastapi&logoColor=white)]()
+[![Orchestration](https://img.shields.io/badge/orchestration-LangGraph-8B5CF6?style=flat-square)]()
+[![Inference](https://img.shields.io/badge/inference-Groq%20LLM-EF4444?style=flat-square)]()
+[![Vector DB](https://img.shields.io/badge/vector%20db-ChromaDB-F59E0B?style=flat-square)]()
+[![License](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)]()
 
 > **Root cause analysis for battery manufacturing failures, compressed from hours to minutes — with evidence, not guesses.**
 
@@ -14,6 +16,7 @@
 
 ## Table of Contents
 
+- [Demo](#demo)
 - [Overview](#overview)
 - [Problem Statement](#problem-statement)
 - [Core Innovation](#core-innovation)
@@ -25,13 +28,29 @@
 - [System Architecture](#system-architecture)
 - [Investigation Workflow](#investigation-workflow)
 - [Datasets](#datasets)
-- [Screenshots](#screenshots)
-- [Project Structure](#project-structure)
+- [Product Showcase](#product-showcase)
+- [Quick Navigation](#quick-navigation)
 - [Local Setup](#local-setup)
 - [Future Roadmap](#future-roadmap)
+- [Why CellSage AI Matters](#why-cellsage-ai-matters)
 - [Why CellSage AI Stands Out](#why-cellsage-ai-stands-out)
 - [Team Contributions](#team-contributions)
 - [Conclusion](#conclusion)
+
+---
+
+## Demo
+
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_App-3B82F6?style=for-the-badge)](#)
+[![GitHub Repository](https://img.shields.io/badge/💻_GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](#)
+[![Presentation Deck](https://img.shields.io/badge/📑_Presentation-Deck-F59E0B?style=for-the-badge)](#)
+[![Architecture Overview](https://img.shields.io/badge/🏗️_Architecture-Overview-8B5CF6?style=for-the-badge)](#system-architecture)
+
+</div>
+
+> *Links above are placeholders — swap in the live deployment, repository, and deck URLs once available.*
 
 ---
 
@@ -234,37 +253,81 @@ This pipeline ensures CellSage AI never answers from memory alone — every clai
 
 ## System Architecture
 
-```
-                         ┌─────────────┐
-                         │     User    │
-                         └──────┬──────┘
-                                │
-                                ▼
-                    ┌───────────────────────┐
-                    │   Frontend (React)    │
-                    │  Vite · TS · Tailwind │
-                    └───────────┬───────────┘
-                                │  REST / Axios
-                                ▼
-                    ┌───────────────────────┐
-                    │     FastAPI Backend   │
-                    │   Investigation APIs  │
-                    └───────────┬───────────┘
-                                │
-                                ▼
-                    ┌───────────────────────┐
-                    │  LangGraph Orchestrator│
-                    │  (Multi-Agent Pipeline)│
-                    └───────────┬───────────┘
-                 ┌──────────────┼──────────────┐
-                 ▼              ▼              ▼
-         ┌───────────┐  ┌─────────────┐  ┌────────────┐
-         │ ChromaDB  │  │  Groq LLM   │  │   SQLite   │
-         │ (Vectors) │  │ (Reasoning) │  │ (History)  │
-         └───────────┘  └─────────────┘  └────────────┘
+```mermaid
+flowchart TD
+    User(["👤 User"])
+
+    subgraph FE["FRONTEND LAYER"]
+        direction TB
+        Frontend["React + TypeScript<br/>Vite · Tailwind CSS"]
+    end
+
+    subgraph BE["API LAYER"]
+        direction TB
+        Backend["FastAPI Backend<br/>Investigation · Retrieval · Report APIs"]
+    end
+
+    subgraph ORCH["ORCHESTRATION LAYER"]
+        direction TB
+        LangGraph["LangGraph Orchestrator<br/>Multi-Agent State Machine"]
+    end
+
+    subgraph AGENTS["AGENT LAYER"]
+        direction LR
+        A1["Retrieval<br/>Agent"]
+        A2["Sensor Analysis<br/>Agent"]
+        A3["Root Cause<br/>Agent"]
+        A4["Recommendation<br/>Agent"]
+    end
+
+    subgraph KNOW["KNOWLEDGE + REASONING LAYER"]
+        direction LR
+        Chroma[("ChromaDB<br/>Vector Database")]
+        Groq["Groq LLM<br/>Inference Engine"]
+        SQLite[("SQLite<br/>Investigation History")]
+    end
+
+    Report(["📄 Investigation Report"])
+
+    User --> Frontend
+    Frontend -- "REST / Axios" --> Backend
+    Backend --> LangGraph
+    LangGraph --> A1 & A2 & A3 & A4
+    A1 --> Chroma
+    A2 --> Groq
+    A3 --> Groq
+    A4 --> Groq
+    Chroma --> Groq
+    Groq --> SQLite
+    SQLite --> Report
+
+    classDef frontend fill:#3B82F6,stroke:#1E40AF,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef backend fill:#22C55E,stroke:#15803D,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef agent fill:#8B5CF6,stroke:#5B21B6,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef chroma fill:#F59E0B,stroke:#B45309,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef groq fill:#EF4444,stroke:#B91C1C,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef sqlite fill:#6B7280,stroke:#374151,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef endpoint fill:#111827,stroke:#374151,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef subgraphStyle fill:#0F172A,stroke:#1E293B,stroke-width:1px,color:#94A3B8
+
+    class Frontend frontend
+    class Backend backend
+    class LangGraph backend
+    class A1,A2,A3,A4 agent
+    class Chroma chroma
+    class Groq groq
+    class SQLite sqlite
+    class User,Report endpoint
+    class FE,BE,ORCH,AGENTS,KNOW subgraphStyle
 ```
 
-The frontend communicates exclusively through the FastAPI layer, which delegates all reasoning to the LangGraph-orchestrated agent pipeline. ChromaDB serves as the semantic knowledge layer, Groq powers low-latency LLM reasoning at each agent stage, and SQLite persists investigation history and metadata for the Historical Investigation Explorer and Analytics Dashboard.
+### How Data Flows Through the Platform
+
+A request enters through the **React + TypeScript frontend**, where an engineer submits a manufacturing issue. The **FastAPI backend** receives the request and hands it to the **LangGraph Orchestrator**, which drives the investigation as a coordinated state machine rather than a single LLM call.
+
+The orchestrator dispatches the **Retrieval, Sensor Analysis, Root Cause, and Recommendation agents**, each contributing a distinct piece of the investigation. The Retrieval Agent pulls grounding evidence from **ChromaDB**; all four agents reason over that evidence using the **Groq LLM** for low-latency inference. Every output — evidence, reasoning trail, root cause, recommendation — is persisted in **SQLite**, which feeds both the Historical Investigation Explorer and the final **Investigation Report** returned to the user.
+
+The result is a closed loop: every investigation is evidence-grounded going in, and fully auditable coming out.
 
 ---
 
@@ -299,43 +362,58 @@ These datasets were purpose-built to:
 
 ---
 
-## Screenshots
+## Product Showcase
 
-> *Screenshots below are placeholders — replace with actual captures before final submission.*
+### Executive Dashboard
 
-| View | Preview |
-|---|---|
-| Landing Page | `screenshots/home.png` |
-| Investigation Workspace | `screenshots/investigation.png` |
-| Executive Dashboard | `screenshots/dashboard.png` |
-| Historical Investigation Explorer | `screenshots/history.png` |
-| Investigation Report | `screenshots/report.png` |
+![Executive Dashboard](./Screenshots/dashboard.png)
+
+The Executive Dashboard distills weeks of investigation activity into a single operational view — open investigations, recurring failure categories, and resolution velocity, all visible at a glance. Plant managers and engineering leads get the signal they need to prioritize without digging through individual case files, turning CellSage AI from an engineering tool into a decision-making instrument for production leadership.
+
+### Analytics Dashboard
+
+![Analytics Dashboard](./Screenshots/analytics.png)
+
+Built on interactive, drillable charts, the Analytics Dashboard surfaces failure trends, root cause distribution, and investigation turnaround time across the full manufacturing history. Engineers can spot a failure mode trending upward across batches before it escalates into a line-wide quality event — shifting the team from reactive troubleshooting to proactive pattern recognition.
+
+### Investigation History
+
+![Investigation History](./Screenshots/history.png)
+
+Every past investigation becomes a searchable, reusable asset rather than a closed ticket. Engineers facing a new failure can instantly surface prior cases with matching symptoms, root causes, or affected equipment — cutting redundant diagnostic work and preserving institutional knowledge that would otherwise leave with senior staff.
+
+### Investigation Report
+
+![Investigation Report](./Screenshots/report.png)
+
+Each investigation concludes in a structured, audit-ready report — full evidence trail, confidence-scored root cause, and SOP-aligned corrective actions, exportable to PDF in one click. This is the artifact that extends CellSage AI's value beyond the engineering team, into quality reviews, compliance audits, and stakeholder updates.
 
 ---
 
-## Project Structure
+## Quick Navigation
 
 ```
 CellSageAI/
 │
-├── frontend/
-│   ├── src/
-│   ├── components/
-│   ├── routes/
-│   ├── services/
-│   └── assets/
-│
-├── backend/
-│   ├── agents/
-│   ├── api/
-│   ├── database/
-│   ├── rag/
-│   ├── services/
-│   └── main.py
-│
-├── screenshots/
-└── README.md
+├── backend/                 # FastAPI services, agents, RAG pipeline
+├── src/                     # React + TypeScript application source
+├── public/                  # Static public assets
+├── Screenshots/             # Product screenshots
+├── docs/                    # Architecture notes & supporting documentation
+├── README.md
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+└── configuration files
 ```
+
+| | |
+|---|---|
+| 📂 **Source Code** | [`./src`](./src) |
+| ⚙️ **Backend Services** | [`./backend`](./backend) |
+| 🖼️ **Screenshots** | [`./Screenshots`](./Screenshots) |
+| 📚 **Documentation** | [`./docs`](./docs) |
+| 🌐 **Public Assets** | [`./public`](./public) |
 
 ---
 
@@ -359,7 +437,6 @@ The backend will be available at `http://localhost:8000`, with interactive API d
 ### Frontend
 
 ```bash
-cd frontend
 npm install
 npm run dev
 ```
@@ -384,6 +461,22 @@ CellSage AI is architected to extend well beyond its hackathon scope into a prod
 
 ---
 
+## Why CellSage AI Matters
+
+**From hours to minutes.** A typical battery failure investigation today means an engineer manually cross-referencing SOPs, maintenance logs, and historical cases — a process that routinely consumes several engineering hours per incident before a root cause is even confirmed. CellSage AI compresses that into a structured investigation that completes in minutes, freeing engineers to act on root causes instead of hunting for them.
+
+**Decisions backed by evidence, not intuition.** Every root cause CellSage AI surfaces is tied to a specific SOP clause, sensor reading, or historical precedent — not an unsupported model guess. That traceability is what makes the output usable in a regulated manufacturing environment, where "the model said so" isn't an acceptable answer, but "here's the SOP section and the sensor log behind this" is.
+
+**Manufacturing knowledge that doesn't walk out the door.** Process expertise tends to concentrate in a small number of senior engineers, and it leaves with them when they retire or move on. By systematizing historical investigations into a searchable, reasoning-capable knowledge base, CellSage AI converts tribal knowledge into an institutional asset that compounds in value over time instead of disappearing with attrition.
+
+**Explainability as a requirement, not a feature.** In safety-critical manufacturing — where a missed root cause can mean a thermal event downstream — confidence scores and a visible reasoning trail aren't a UI flourish. They're what lets a quality team sign off on an AI-assisted investigation with the same rigor as a human-led one.
+
+**Built to scale past one production line.** The same multi-agent architecture handling a single line today is designed to extend across MES integration, multiple factories, and predictive maintenance workflows without re-architecting the core reasoning pipeline.
+
+**The bigger picture.** EV battery manufacturing is scaling globally faster than the supply of experienced RCA engineers. CellSage AI doesn't replace that expertise — it multiplies it, letting a smaller engineering team cover more production capacity without a proportional growth in investigation backlog.
+
+---
+
 ## Why CellSage AI Stands Out
 
 **Agentic AI architecture.** CellSage AI doesn't ask an LLM to "figure it out" in a single shot. It decomposes investigation into specialized agents — retrieval, sensor analysis, root cause reasoning, recommendation — each with a narrow, well-defined responsibility. This mirrors how real engineering teams actually investigate failures, and it produces more reliable, more inspectable results than a single-prompt chatbot ever could.
@@ -397,6 +490,17 @@ CellSage AI is architected to extend well beyond its hackathon scope into a prod
 **Enterprise deployment potential.** The architecture — FastAPI backend, vector-indexed knowledge layer, agent orchestration via LangGraph — is built to scale from a hackathon demo to a real multi-factory deployment, with a clear roadmap toward MES/ERP integration and predictive maintenance.
 
 CellSage AI isn't a proof-of-concept chatbot wrapped in a battery-manufacturing theme. It's a domain-grounded, agentic reasoning system designed to solve one of the most expensive, time-consuming problems in EV manufacturing today.
+
+---
+
+## Team Contributions
+
+| Name | Role | Contributions |
+|---|---|---|
+| *[Team Member 1]* | *[Role]* | *[Contributions]* |
+| *[Team Member 2]* | *[Role]* | *[Contributions]* |
+| *[Team Member 3]* | *[Role]* | *[Contributions]* |
+| *[Team Member 4]* | *[Role]* | *[Contributions]* |
 
 ---
 
