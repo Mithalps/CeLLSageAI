@@ -49,8 +49,6 @@
 
 [![GitHub Repository](https://img.shields.io/badge/💻_GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](#)
 
-[![Presentation Deck](https://img.shields.io/badge/📑_Presentation-Deck-F59E0B?style=for-the-badge)](#)
-
 [![Architecture Overview](https://img.shields.io/badge/🏗️_Architecture-Overview-8B5CF6?style=for-the-badge)](#system-architecture)
 
 </div>
