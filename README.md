@@ -274,6 +274,7 @@ http://localhost:5173
 
 ## Screenshots
 
+### Screenshots
 ![Dashboard](Screenshots/dashboard.png)
 
 ![Investigation](Screenshots/investigation.png)
