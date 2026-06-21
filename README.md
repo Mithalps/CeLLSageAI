@@ -274,13 +274,13 @@ http://localhost:5173
 
 ## Screenshots
 
-![Dashboard](dashboard.png)
+![Dashboard](Screenshots/dashboard.png)
 
-![Investigation](investigation.png)
+![Investigation](Screenshots/investigation.png)
 
-![Analytics](analytics.png)
+![Analytics](Screenshots/analytics.png)
 
-![History](history.png)
+![History](Screenshots/history.png)
 
 Built for The Arch: RAG & Agentic AI Hackathon 2026
 
