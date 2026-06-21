@@ -43,6 +43,7 @@
 
 <div align="center">
 
+[![Working Demo Video](https://img.shields.io/badge/🎥_Working_Demo-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/Xjzm5axWjEs)
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_App-3B82F6?style=for-the-badge)](#)
 [![GitHub Repository](https://img.shields.io/badge/💻_GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](#)
 [![Presentation Deck](https://img.shields.io/badge/📑_Presentation-Deck-F59E0B?style=for-the-badge)](#)
@@ -409,11 +410,11 @@ CellSageAI/
 
 | | |
 |---|---|
-| 📂 **Source Code** | [`./src`](./src) |
-| ⚙️ **Backend Services** | [`./backend`](./backend) |
-| 🖼️ **Screenshots** | [`./Screenshots`](./Screenshots) |
-| 📚 **Documentation** | [`./docs`](./docs) |
-| 🌐 **Public Assets** | [`./public`](./public) |
+|  **Source Code** | [`./src`](./src) |
+|  **Backend Services** | [`./backend`](./backend) |
+|  **Screenshots** | [`./Screenshots`](./Screenshots) |
+|  **Documentation** | [`./docs`](./docs) |
+|  **Public Assets** | [`./public`](./public) |
 
 ---
 
