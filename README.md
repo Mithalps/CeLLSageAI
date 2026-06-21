@@ -45,7 +45,7 @@
 
 [![Working Demo Video](https://img.shields.io/badge/🎥_Working_Demo-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/Xjzm5axWjEs)
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_App-3B82F6?style=for-the-badge)](#)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_App-3B82F6?style=for-the-badge)](https://cellsage-ai-demo.vercel.app)
 
 [![GitHub Repository](https://img.shields.io/badge/💻_GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](#)
 
