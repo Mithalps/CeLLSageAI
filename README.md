@@ -387,7 +387,7 @@ Every past investigation becomes a searchable, reusable asset rather than a clos
 
 ### Investigation Report
 
-![Investigation Report](./Screenshots/report.png)
+![Investigation Report](./Screenshots/investigation.png)
 
 Each investigation concludes in a structured, audit-ready report — full evidence trail, confidence-scored root cause, and SOP-aligned corrective actions, exportable to PDF in one click. This is the artifact that extends CellSage AI's value beyond the engineering team, into quality reviews, compliance audits, and stakeholder updates.
 
