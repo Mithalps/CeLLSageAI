@@ -32,9 +32,6 @@
 - [Quick Navigation](#quick-navigation)
 - [Local Setup](#local-setup)
 - [Future Roadmap](#future-roadmap)
-- [Why CellSage AI Matters](#why-cellsage-ai-matters)
-- [Why CellSage AI Stands Out](#why-cellsage-ai-stands-out)
-- [Team Contributions](#team-contributions)
 - [Conclusion](#conclusion)
 
 ---
@@ -462,37 +459,6 @@ CellSage AI is architected to extend well beyond its hackathon scope into a prod
 - **Multi-factory deployment** — federated knowledge sharing across manufacturing sites
 - **Explainable AI investigations** — deeper interpretability tooling so every agent decision is fully auditable by quality and compliance teams
 
----
-
-## Why CellSage AI Matters
-
-**From hours to minutes.** A typical battery failure investigation today means an engineer manually cross-referencing SOPs, maintenance logs, and historical cases — a process that routinely consumes several engineering hours per incident before a root cause is even confirmed. CellSage AI compresses that into a structured investigation that completes in minutes, freeing engineers to act on root causes instead of hunting for them.
-
-**Decisions backed by evidence, not intuition.** Every root cause CellSage AI surfaces is tied to a specific SOP clause, sensor reading, or historical precedent — not an unsupported model guess. That traceability is what makes the output usable in a regulated manufacturing environment, where "the model said so" isn't an acceptable answer, but "here's the SOP section and the sensor log behind this" is.
-
-**Manufacturing knowledge that doesn't walk out the door.** Process expertise tends to concentrate in a small number of senior engineers, and it leaves with them when they retire or move on. By systematizing historical investigations into a searchable, reasoning-capable knowledge base, CellSage AI converts tribal knowledge into an institutional asset that compounds in value over time instead of disappearing with attrition.
-
-**Explainability as a requirement, not a feature.** In safety-critical manufacturing — where a missed root cause can mean a thermal event downstream — confidence scores and a visible reasoning trail aren't a UI flourish. They're what lets a quality team sign off on an AI-assisted investigation with the same rigor as a human-led one.
-
-**Built to scale past one production line.** The same multi-agent architecture handling a single line today is designed to extend across MES integration, multiple factories, and predictive maintenance workflows without re-architecting the core reasoning pipeline.
-
-**The bigger picture.** EV battery manufacturing is scaling globally faster than the supply of experienced RCA engineers. CellSage AI doesn't replace that expertise — it multiplies it, letting a smaller engineering team cover more production capacity without a proportional growth in investigation backlog.
-
----
-
-## Why CellSage AI Stands Out
-
-**Agentic AI architecture.** CellSage AI doesn't ask an LLM to "figure it out" in a single shot. It decomposes investigation into specialized agents — retrieval, sensor analysis, root cause reasoning, recommendation — each with a narrow, well-defined responsibility. This mirrors how real engineering teams actually investigate failures, and it produces more reliable, more inspectable results than a single-prompt chatbot ever could.
-
-**RAG-powered manufacturing intelligence.** Every agent conclusion is grounded in retrieved evidence — SOPs, historical cases, maintenance records — not LLM speculation. This is the difference between a tool engineers can trust with real production decisions and a novelty demo.
-
-**Explainable root cause analysis.** Confidence scores, source attribution, and a visible reasoning trail mean CellSage AI's outputs aren't a black box — they're auditable, which matters enormously in a regulated, safety-critical domain like EV battery manufacturing.
-
-**Actionable recommendations.** Recommendations aren't generic LLM advice — they're tied directly to the organization's own SOPs, meaning what CellSage AI suggests is immediately executable on the shop floor.
-
-**Enterprise deployment potential.** The architecture — FastAPI backend, vector-indexed knowledge layer, agent orchestration via LangGraph — is built to scale from a hackathon demo to a real multi-factory deployment, with a clear roadmap toward MES/ERP integration and predictive maintenance.
-
-CellSage AI isn't a proof-of-concept chatbot wrapped in a battery-manufacturing theme. It's a domain-grounded, agentic reasoning system designed to solve one of the most expensive, time-consuming problems in EV manufacturing today.
 
 ---
 
